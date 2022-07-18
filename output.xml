@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20220716 20:42:47.081" rpa="false" schemaversion="3">
+<suite id="s1" name="Treinamento Testes" source="C:\cursoRobot\Exercicio01\treinamento_testes.robot">
+<test id="s1-t1" name="Caso de teste 01- Verifica o preenchimento do campo nome" line="11">
+<kw name="Abrir o navegador" library="treinamento_resource" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220716 20:42:47.359" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20220716 20:42:47.359" endtime="20220716 20:42:48.599"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220716 20:42:48.599" endtime="20220716 20:42:48.721"/>
+</kw>
+<status status="PASS" starttime="20220716 20:42:47.358" endtime="20220716 20:42:48.722"/>
+</kw>
+<kw name="Acessar a home page do site wcaquino" library="treinamento_resource">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>url=${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220716 20:42:48.723" level="INFO">Opening url 'https://wcaquino.me/selenium/componentes.html'</msg>
+<status status="PASS" starttime="20220716 20:42:48.723" endtime="20220716 20:42:49.444"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=${TEXT_HEADER_CAMPO_DE_TREINAMENTO}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220716 20:42:49.444" endtime="20220716 20:42:49.480"/>
+</kw>
+<status status="PASS" starttime="20220716 20:42:48.722" endtime="20220716 20:42:49.481"/>
+</kw>
+<kw name="Verificar se aparece a frase &quot;Campo de treinamento&quot;" library="treinamento_resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${TEXT_HEADER_CAMPO_DE_TREINAMENTO}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220716 20:42:49.482" endtime="20220716 20:42:49.504"/>
+</kw>
+<status status="PASS" starttime="20220716 20:42:49.481" endtime="20220716 20:42:49.504"/>
+</kw>
+<kw name="Preencher nome com Maria" library="treinamento_resource" sourcename="Preencher nome com ${NOME}">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=elementosForm:nome</arg>
+<arg>text=${NOME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220716 20:42:49.506" level="INFO">Typing text 'Maria' into text field 'elementosForm:nome'.</msg>
+<status status="PASS" starttime="20220716 20:42:49.505" endtime="20220716 20:42:49.611"/>
+</kw>
+<status status="PASS" starttime="20220716 20:42:49.505" endtime="20220716 20:42:49.611"/>
+</kw>
+<kw name="Preencher sobrenome com Silva" library="treinamento_resource" sourcename="Preencher sobrenome com ${NOME}">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=elementosForm:sobrenome</arg>
+<arg>text=${NOME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220716 20:42:49.615" level="INFO">Typing text 'Silva' into text field 'elementosForm:sobrenome'.</msg>
+<status status="PASS" starttime="20220716 20:42:49.614" endtime="20220716 20:42:49.710"/>
+</kw>
+<status status="PASS" starttime="20220716 20:42:49.613" endtime="20220716 20:42:49.710"/>
+</kw>
+<kw name="Preencher sexo com F" library="treinamento_resource" sourcename="Preencher sexo com ${SEXO}">
+<kw name="Select Radio Button" library="SeleniumLibrary">
+<arg>group_name=elementosForm:sexo</arg>
+<arg>value=${SEXO}</arg>
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<msg timestamp="20220716 20:42:49.712" level="INFO">Selecting 'F' from radio button 'elementosForm:sexo'.</msg>
+<status status="PASS" starttime="20220716 20:42:49.712" endtime="20220716 20:42:49.777"/>
+</kw>
+<status status="PASS" starttime="20220716 20:42:49.711" endtime="20220716 20:42:49.777"/>
+</kw>
+<kw name="Selecionar checkbox pizza" library="treinamento_resource" sourcename="Selecionar checkbox ${NOME}">
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>locator=//input[contains(@value,'${NOME}')]</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20220716 20:42:49.779" level="INFO">Selecting checkbox '//input[contains(@value,'pizza')]'.</msg>
+<status status="PASS" starttime="20220716 20:42:49.779" endtime="20220716 20:42:49.857"/>
+</kw>
+<status status="PASS" starttime="20220716 20:42:49.778" endtime="20220716 20:42:49.857"/>
+</kw>
+<kw name="Selecionar escolaridade superior" library="treinamento_resource" sourcename="Selecionar escolaridade ${ESCOLARIDADE}">
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>elementosForm:escolaridade</arg>
+<arg>${ESCOLARIDADE}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20220716 20:42:49.859" level="INFO">Selecting options from selection list 'elementosForm:escolaridade' by value superior.</msg>
+<status status="PASS" starttime="20220716 20:42:49.859" endtime="20220716 20:42:49.921"/>
+</kw>
+<status status="PASS" starttime="20220716 20:42:49.858" endtime="20220716 20:42:49.921"/>
+</kw>
+<kw name="Selecionar esporte Corrida" library="treinamento_resource" sourcename="Selecionar esporte ${ESPORTE}">
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>elementosForm:esportes</arg>
+<arg>${ESPORTE}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20220716 20:42:49.923" level="INFO">Selecting options from selection list 'elementosForm:esportes' by value Corrida.</msg>
+<status status="PASS" starttime="20220716 20:42:49.922" endtime="20220716 20:42:49.993"/>
+</kw>
+<status status="PASS" starttime="20220716 20:42:49.922" endtime="20220716 20:42:49.994"/>
+</kw>
+<kw name="Preencher sugestoes Às vezes ouço passar o vento; e só de ouvir o vento passar, vale a pena ter nascido." library="treinamento_resource" sourcename="Preencher sugestoes ${TEXTO}">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>elementosForm:sugestoes</arg>
+<arg>${TEXTO}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220716 20:42:49.995" level="INFO">Typing text 'Às vezes ouço passar o vento; e só de ouvir o vento passar, vale a pena ter nascido.' into text field 'elementosForm:sugestoes'.</msg>
+<status status="PASS" starttime="20220716 20:42:49.995" endtime="20220716 20:42:50.139"/>
+</kw>
+<status status="PASS" starttime="20220716 20:42:49.995" endtime="20220716 20:42:50.140"/>
+</kw>
+<kw name="Clicar em confirmar" library="treinamento_resource">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>elementosForm:cadastrar</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220716 20:42:50.141" level="INFO">Clicking button 'elementosForm:cadastrar'.</msg>
+<status status="PASS" starttime="20220716 20:42:50.140" endtime="20220716 20:42:50.200"/>
+</kw>
+<status status="PASS" starttime="20220716 20:42:50.140" endtime="20220716 20:42:50.200"/>
+</kw>
+<kw name="Verificar texto Nome: Maria" library="treinamento_resource" sourcename="Verificar texto Nome: ${TEXTO}">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>descNome</arg>
+<arg>${TEXTO}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220716 20:42:50.229" level="INFO">Element 'descNome' contains text 'Maria'.</msg>
+<status status="PASS" starttime="20220716 20:42:50.202" endtime="20220716 20:42:50.229"/>
+</kw>
+<status status="PASS" starttime="20220716 20:42:50.201" endtime="20220716 20:42:50.229"/>
+</kw>
+<kw name="Verificar texto Sobrenome: Silva" library="treinamento_resource" sourcename="Verificar texto Sobrenome: ${TEXTO}">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>descSobrenome</arg>
+<arg>${TEXTO}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220716 20:42:50.255" level="INFO">Element 'descSobrenome' contains text 'Silva'.</msg>
+<status status="PASS" starttime="20220716 20:42:50.230" endtime="20220716 20:42:50.255"/>
+</kw>
+<status status="PASS" starttime="20220716 20:42:50.230" endtime="20220716 20:42:50.255"/>
+</kw>
+<kw name="Verificar texto Sexo: Feminino" library="treinamento_resource" sourcename="Verificar texto Sexo: ${TEXTO}">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>descSexo</arg>
+<arg>${TEXTO}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220716 20:42:50.280" level="INFO">Element 'descSexo' contains text 'Feminino'.</msg>
+<status status="PASS" starttime="20220716 20:42:50.256" endtime="20220716 20:42:50.280"/>
+</kw>
+<status status="PASS" starttime="20220716 20:42:50.256" endtime="20220716 20:42:50.280"/>
+</kw>
+<kw name="Verificar texto Comida: Pizza" library="treinamento_resource" sourcename="Verificar texto Comida: ${TEXTO}">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>descComida</arg>
+<arg>${TEXTO}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220716 20:42:50.303" level="INFO">Element 'descComida' contains text 'Pizza'.</msg>
+<status status="PASS" starttime="20220716 20:42:50.281" endtime="20220716 20:42:50.303"/>
+</kw>
+<status status="PASS" starttime="20220716 20:42:50.281" endtime="20220716 20:42:50.304"/>
+</kw>
+<kw name="Verificar texto Escolaridade: superior" library="treinamento_resource" sourcename="Verificar texto Escolaridade: ${TEXTO}">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>descEscolaridade</arg>
+<arg>${TEXTO}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220716 20:42:50.326" level="INFO">Element 'descEscolaridade' contains text 'superior'.</msg>
+<status status="PASS" starttime="20220716 20:42:50.304" endtime="20220716 20:42:50.326"/>
+</kw>
+<status status="PASS" starttime="20220716 20:42:50.304" endtime="20220716 20:42:50.327"/>
+</kw>
+<kw name="Verificar texto Esportes: Corrida" library="treinamento_resource" sourcename="Verificar texto Esportes: ${TEXTO}">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>descEsportes</arg>
+<arg>${TEXTO}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220716 20:42:50.348" level="INFO">Element 'descEsportes' contains text 'Corrida'.</msg>
+<status status="PASS" starttime="20220716 20:42:50.327" endtime="20220716 20:42:50.348"/>
+</kw>
+<status status="PASS" starttime="20220716 20:42:50.327" endtime="20220716 20:42:50.348"/>
+</kw>
+<kw name="Verificar texto Sugestoes: Às vezes ouço passar o vento; e só de ouvir o vento passar, vale a pena ter nascido." library="treinamento_resource" sourcename="Verificar texto Sugestoes: ${TEXTO}">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>descSugestoes</arg>
+<arg>${TEXTO}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220716 20:42:50.370" level="INFO">Element 'descSugestoes' contains text 'Às vezes ouço passar o vento; e só de ouvir o vento passar, vale a pena ter nascido.'.</msg>
+<status status="PASS" starttime="20220716 20:42:50.349" endtime="20220716 20:42:50.370"/>
+</kw>
+<status status="PASS" starttime="20220716 20:42:50.349" endtime="20220716 20:42:50.370"/>
+</kw>
+<kw name="Fechar o navegador" library="treinamento_resource" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220716 20:42:50.371" endtime="20220716 20:42:52.502"/>
+</kw>
+<status status="PASS" starttime="20220716 20:42:50.371" endtime="20220716 20:42:52.503"/>
+</kw>
+<status status="PASS" starttime="20220716 20:42:47.357" endtime="20220716 20:42:52.504"/>
+</test>
+<doc>Esse teste preenche um formulário</doc>
+<status status="PASS" starttime="20220716 20:42:47.083" endtime="20220716 20:42:52.507"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Treinamento Testes">Treinamento Testes</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
